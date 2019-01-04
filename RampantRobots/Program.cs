@@ -10,9 +10,10 @@ namespace RampantRobots
     {
         static void Main(string[] args)
         {
-            Factory brieque = new Factory(4, 4);
+            // initialisatie van de fabriek
+            Factory brieque = new Factory(4, 4, 5);
             Console.WriteLine(brieque.ToString());
-            Console.ReadLine();
+            Console.ReadLine(); // voorkomt dat het programma zich direct afsluit
         }
     }
 }
