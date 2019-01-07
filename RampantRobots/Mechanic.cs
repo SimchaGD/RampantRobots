@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace RampantRobots
 {
-    class Mechanics
+    class Mechanic
     {
         public int xPos { get; set; }
         public int yPos { get; set; }
 
         // Robbie wordt geïnstalleerd
-        public Mechanics()
+        public Mechanic()
         {
             xPos = 1;
             yPos = 1;

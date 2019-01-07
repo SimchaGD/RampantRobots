@@ -14,12 +14,13 @@ namespace RampantRobots
         public int height { get; set; }
         public int nRobots { get; set; }
         public List<Robots> train; // Maak een leeg treintje aan
-        
+        public Mechanic Bob;
         public Factory(int width, int height, int nRobots)
         {
             this.width = width;
             this.height = height;
             this.nRobots = nRobots;
+            Bob = new Mechanic();
             DeployRobots(nRobots, true);
         }
         
@@ -127,6 +128,18 @@ namespace RampantRobots
         {
             List<char> directionList = new List<char>();
             directionList.AddRange(directionsString);
+            for (int step = 0; step > directionList.Count(); step++)
+            {
+                char stepDirection = directionList[step];
+                int direction = 0;
+                if (stepDirection == 'd') direction = 1;
+                if (stepDirection == 'a') direction = 2;
+                if (stepDirection == 'w') direction = -1;
+                if (stepDirection == 's') direction = -2;
+                Bob.Walk(direction);
+
+            }
         }
+
     }
 }
