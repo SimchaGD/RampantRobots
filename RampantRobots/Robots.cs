@@ -12,7 +12,7 @@ namespace RampantRobots
         public int yPos { get; set; }
 
         // Robbie wordt geïnstalleerd
-        public Robots(int height, int width, bool randomize)
+        public Robots(int height, int width, bool randomize, int index)
         {   
             if (randomize)
             {
@@ -20,6 +20,11 @@ namespace RampantRobots
                 Random rnd = new Random();
                 this.xPos = rnd.Next(1, width);
                 this.yPos = rnd.Next(1, height);
+            }
+            else
+            {
+                this.xPos = index;
+                this.yPos = index;
             }
         }
 
@@ -34,5 +39,29 @@ namespace RampantRobots
             }
             return false;
         }
+
+        // De robots zetten een stapje
+        public void Walk()
+        {
+            Random rnd = new Random();
+            int direction = 0;
+            while (direction == 0)
+            {
+                // Kies welke richting robbie op moet stappen
+                direction = rnd.Next(-2, 2);
+            }
+            
+            if (direction == 1) xPos++;
+            if (direction == 2) xPos--;
+            if (direction == -1) yPos++;
+            if (direction == -2) yPos--;
+                        
+        }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
+        
     }
 }

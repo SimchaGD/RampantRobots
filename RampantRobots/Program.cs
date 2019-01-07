@@ -12,8 +12,13 @@ namespace RampantRobots
         {
             // initialisatie van de fabriek
             Factory brieque = new Factory(4, 4, 5);
-            Console.WriteLine(brieque.ToString());
-            Console.ReadLine(); // voorkomt dat het programma zich direct afsluit
+            string userInput;
+            do
+            {
+                Console.WriteLine(brieque.ToString());
+                userInput = Console.ReadLine(); // Vraag input van de gebruiker
+                brieque.MoveRobots();
+            } while (("wasd".Contains(userInput.ToLower())));
         }
     }
 }
