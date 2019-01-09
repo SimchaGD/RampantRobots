@@ -18,7 +18,7 @@ namespace RampantRobots
             yPos = 1;
         }
 
-        public bool Equals(object obj)
+        public override bool Equals(object obj)
         {
             // Kijk of robbie met robots aan het praten is
             if (obj.GetType() == typeof(Robots))
@@ -35,6 +35,11 @@ namespace RampantRobots
             if (direction == 2) xPos--;
             if (direction == -1) yPos++;
             if (direction == -2) yPos--;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }
