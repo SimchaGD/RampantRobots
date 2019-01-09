@@ -29,7 +29,7 @@ namespace RampantRobots
         }
 
         // Robbie vraagt of iemand anders al naar zijn bestemming gaat
-        public override bool Equals(object obj)
+        public bool Equals(object obj)
         {
             // Kijk of robbie met robots aan het praten is
             if (obj.GetType() == typeof(Robots))

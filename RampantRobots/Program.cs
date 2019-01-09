@@ -10,15 +10,14 @@ namespace RampantRobots
     {
         static void Main(string[] args)
         {
-            // initialisatie van de fabriek
-            Factory brieque = new Factory(4, 4, 5);
-            string userInput;
-            do
-            {
-                Console.WriteLine(brieque.ToString());
-                userInput = Console.ReadLine(); // Vraag input van de gebruiker
-                brieque.MoveRobots();
-            } while (("wasd".Contains(userInput.ToLower())));
+            // Maak een fabriek en geef op:
+            // - [INTEGER] De breedte
+            // - [INTEGER] De hoogte
+            // - [INTEGER] Het aantal robots
+            // - [INTEGER] Het aantal beurten
+            // - [TRUE/FALSE] Of de robots mogen lopen
+            Factory fabriek = new Factory(10, 10, 5, 10, true);
+            fabriek.Run();
         }
     }
 }
